@@ -9,38 +9,45 @@ REST API для социальной сети Yatube с возможностью
 ```bash
 git clone https://github.com/your_username/yatube_api.git
 cd yatube_api
-Создать и активировать виртуальное окружение:
+```
 
-bash
+2. Создать и активировать виртуальное окружение:
+
+```bash
 python -m venv venv
 # Для Windows:
 venv\Scripts\activate
 # Для macOS/Linux:
 source venv/bin/activate
-Установить зависимости из файла requirements.txt:
+```
+3. Установить зависимости из файла requirements.txt:
 
-bash
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 Выполнить миграции:
-
-bash
+```
+```bash
 python manage.py migrate
-Создать суперпользователя (опционально):
+```
+4. Создать суперпользователя (опционально):
 
-bash
+```bash
 python manage.py createsuperuser
 Запустить проект:
-
-bash
+```
+```bash
 python manage.py runserver
-Примеры API запросов
-Получение списка постов
-bash
+```
+
+## Примеры API запросов
+1. Получение списка постов
+```bash
 GET http://127.0.0.1:8000/api/v1/posts/
+```
 Пример ответа:
 
-json
+```json
 [
     {
         "id": 1,
@@ -51,21 +58,22 @@ json
         "group": null
     }
 ]
-Создание нового поста (требуется аутентификация)
-bash
+```
+2. Создание нового поста (требуется аутентификация)
+```bash
 POST http://127.0.0.1:8000/api/v1/posts/
 Headers:
 Authorization: Bearer <ваш_token>
 Content-Type: application/json
-
 Body:
 {
     "text": "Новый пост",
     "image": "<base64_encoded_image>",
     "group": 1
 }
-Получение комментариев к посту
-bash
+```
+3. Получение комментариев к посту
+```bash
 GET http://127.0.0.1:8000/api/v1/posts/1/comments/
 Подписка на пользователя (требуется аутентификация)
 bash
@@ -78,14 +86,14 @@ Body:
 {
     "following": "username_to_follow"
 }
-Документация API
+```
+## Документация API
 После запуска проекта полная документация API доступна по адресу:
-
+```link
 http://127.0.0.1:8000/redoc/ (ReDoc)
+```
 
-http://127.0.0.1:8000/swagger/ (Swagger UI)
-
-Технологии
+## Технологии
 Python 3.9+
 
 Django 3.2
