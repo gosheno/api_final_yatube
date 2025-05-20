@@ -25,17 +25,17 @@ source venv/bin/activate
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
-Выполнить миграции:
 ```
+4. Выполнить миграции:
 ```bash
 python manage.py migrate
 ```
-4. Создать суперпользователя (опционально):
+5. Создать суперпользователя (опционально):
 
 ```bash
 python manage.py createsuperuser
-Запустить проект:
 ```
+6. Запустить проект:
 ```bash
 python manage.py runserver
 ```
